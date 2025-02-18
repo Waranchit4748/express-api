@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-
+const productRoutes = require('./routes/productRoutes');
+app.use('/api', productRoutes);
 // เชื่อมต่อ MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
